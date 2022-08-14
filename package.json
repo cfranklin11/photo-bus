@@ -4,6 +4,7 @@
   "description": "Store photos in your cloud service of choice, and post them to your phot sharing service of choice",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "typecheck": "tsc"
   },
@@ -18,6 +19,9 @@
   },
   "homepage": "https://github.com/cfranklin11/photo-bus#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "eslint": "^8.22.0",
     "typescript": "^4.7.4"
   }
 }
