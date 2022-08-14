@@ -1,0 +1,11 @@
+service: photo-bus
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+
+functions:
+  hello:
+    handler: app.handler.hello
+    events:
+      - httpApi: '*'
