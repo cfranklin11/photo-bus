@@ -4,7 +4,7 @@
   "description": "Store photos in your cloud service of choice, and post them to your phot sharing service of choice",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint . && prettier app tests --check",
     "test": "echo \"Error: no test specified\" && exit 1",
     "typecheck": "tsc"
   },
@@ -22,6 +22,7 @@
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
     "eslint": "^8.22.0",
+    "prettier": "^2.7.1",
     "typescript": "^4.7.4"
   }
 }
