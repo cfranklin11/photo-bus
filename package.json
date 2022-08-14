@@ -1,0 +1,19 @@
+{
+  "name": "photo-bus",
+  "version": "1.0.0",
+  "description": "Store photos in your cloud service of choice, and post them to your phot sharing service of choice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfranklin11/photo-bus.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cfranklin11/photo-bus/issues"
+  },
+  "homepage": "https://github.com/cfranklin11/photo-bus#readme"
+}
