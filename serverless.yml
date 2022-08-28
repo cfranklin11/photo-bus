@@ -9,6 +9,6 @@ provider:
 
 functions:
   hello:
-    handler: app.handler.hello
-    events:
-      - httpApi: '*'
+    handler: app/handler.hello
+  upload:
+    handler: app/handler.upload
