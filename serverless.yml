@@ -6,9 +6,13 @@ plugins:
 provider:
   name: aws
   runtime: nodejs16.x
+  region: ap-southeast-2
 
 functions:
   hello:
     handler: app/handler.hello
   upload:
     handler: app/handler.upload
+    layers:
+      # Layer for chrome-aws-lambda: https://github.com/shelfio/chrome-aws-lambda-layer
+      - "arn:aws:lambda:ap-southeast-2:764866452798:layer:chrome-aws-lambda:31"
