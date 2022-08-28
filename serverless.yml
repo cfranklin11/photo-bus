@@ -1,11 +1,14 @@
 service: photo-bus
 
+plugins:
+  - serverless-plugin-typescript
+
 provider:
   name: aws
   runtime: nodejs16.x
 
 functions:
   hello:
-    handler: app.handler.hello
-    events:
-      - httpApi: '*'
+    handler: app/handler.hello
+  upload:
+    handler: app/handler.upload
