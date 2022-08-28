@@ -7,6 +7,7 @@ provider:
   name: aws
   runtime: nodejs16.x
   region: ap-southeast-2
+  timeout: 900
 
 functions:
   hello:
