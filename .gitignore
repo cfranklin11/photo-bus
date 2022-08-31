@@ -4,6 +4,7 @@ jspm_packages
 
 # Serverless directories
 .serverless
+*-policy.json
 
 # Build
 .build
