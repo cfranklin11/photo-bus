@@ -5,6 +5,7 @@ plugins:
 
 provider:
   name: aws
+  deploymentMethod: direct
   runtime: nodejs16.x
   region: ap-southeast-2
   timeout: 900
