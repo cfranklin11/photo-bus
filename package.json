@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Store photos in your cloud service of choice, and post them to your phot sharing service of choice",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "deploy": "sls deploy",
     "policy": "yo serverless-policy",

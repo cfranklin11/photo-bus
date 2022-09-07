@@ -1,1 +1,1 @@
-export { hello, upload } from "./app/lambdas"
+export { hello, upload } from "./app/lambdas/index.js"

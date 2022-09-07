@@ -1,4 +1,4 @@
-import { hello } from "../../app/lambdas"
+import { hello } from "../../app/lambdas/hello.js"
 
 describe("hello", () => {
   it("returns a response", async () => {

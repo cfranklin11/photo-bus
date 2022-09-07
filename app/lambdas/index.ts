@@ -1,2 +1,2 @@
-export { hello } from "./hello"
-export { upload } from "./upload"
+export { hello } from "./hello.js"
+export { upload } from "./upload.js"
