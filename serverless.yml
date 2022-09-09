@@ -3,6 +3,7 @@ service: photo-bus
 plugins:
   - serverless-plugin-typescript
 
+useDotenv: true
 provider:
   name: aws
   deploymentMethod: direct
