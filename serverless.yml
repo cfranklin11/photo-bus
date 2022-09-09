@@ -5,10 +5,16 @@ plugins:
 
 provider:
   name: aws
+  deploymentMethod: direct
   runtime: nodejs16.x
+  region: ap-southeast-2
+  timeout: 900
+  memorySize: 1024
+  environment:
+    NODE_ENV: production
 
 functions:
   hello:
-    handler: app/handler.hello
+    handler: handler.hello
   upload:
-    handler: app/handler.upload
+    handler: handler.upload

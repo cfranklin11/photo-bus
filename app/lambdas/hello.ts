@@ -1,4 +1,11 @@
-export const hello = (): { statusCode: number; body: string } => ({
+import "source-map-support/register"
+
+import type { Handler } from "aws-lambda"
+
+export const hello: Handler = async (): Promise<{
+  statusCode: number
+  body: string
+}> => ({
   statusCode: 200,
   body: JSON.stringify(
     {
