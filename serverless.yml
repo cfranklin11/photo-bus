@@ -11,7 +11,9 @@ provider:
   timeout: 900
   memorySize: 1024
   environment:
-    NODE_ENV: production
+    NODE_ENV: ${env:NODE_ENV, "development"}
+    ACCOUNT_EMAIL: ${env:ACCOUNT_EMAIL}
+    ACCOUNT_PASSWORD: ${env:ACCOUNT_PASSWORD}
 
 functions:
   hello:
