@@ -1,4 +1,4 @@
-import "source-map-support/register"
+import "source-map-support/register.js"
 
 import * as puppeteer from "puppeteer-core"
 import chromium from "@sparticuz/chrome-aws-lambda"
