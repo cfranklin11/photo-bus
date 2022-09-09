@@ -10,14 +10,14 @@ const context = {
   logGroupName: "group",
   logStreamName: "stream",
   getRemainingTimeInMillis: () => 42,
-  done: (error?: Error, result?: any) => {},
-  fail: (error: Error | string) => {},
-  succeed: (messageOrObject: any) => {},
+  done: () => null,
+  fail: () => null,
+  succeed: () => null,
 }
 
 describe("hello", () => {
   it("returns a response", async () => {
-    const response = await hello(null, context, () => {})
+    const response = await hello(null, context, () => null)
     expect(response.statusCode).toEqual(200)
   })
 })
