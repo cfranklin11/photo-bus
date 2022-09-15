@@ -9,4 +9,7 @@ jspm_packages
 # Build
 .build
 
+# Secrets
+.env
+
 .DS_Store

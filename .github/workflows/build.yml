@@ -32,4 +32,8 @@ jobs:
           aws-region: ap-southeast-2
       - name: Deploy
         if: ${{ github.ref == 'refs/heads/main' }}
+        env:
+          ACCOUNT_EMAIL: ${{ secrets.ACCOUNT_EMAIL }}
+          ACCOUNT_PASSWORD: ${{ secrets.ACCOUNT_PASSWORD }}
+          NODE_ENV: production
         run: npm run deploy

@@ -12,3 +12,4 @@ Store photos in your cloud service of choice, and post them to your photo sharin
   - Be sure to allow the `lambda:TagResource` action as this is required and doesn't seem to get included by the policy tool.
 - In AWS, create a role with the policy generated in the previous step and apply it to a user.
 - Copy the credentials from the user from the step above and use them to deploy the app.
+- Run `cp .env.example .env` and replace placeholder values with real ones.
