@@ -1,6 +1,4 @@
 import "source-map-support/register.js"
-
-import * as puppeteer from "puppeteer-core"
 import chromium from "@sparticuz/chrome-aws-lambda"
 
 import type { Handler } from "aws-lambda"
@@ -8,19 +6,6 @@ import type { Handler } from "aws-lambda"
 const { NODE_ENV, ACCOUNT_EMAIL, ACCOUNT_PASSWORD } = process.env
 const UPLOADER_URL = "https://family-album.com/web/uploader"
 const REQUIRED_ENV_VARS = [ACCOUNT_EMAIL, ACCOUNT_PASSWORD]
-
-const launchBrowser = async () => {
-  if (NODE_ENV === "production")
-    return await chromium.puppeteer.launch({
-      args: chromium.args,
-      defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath,
-      headless: true,
-      ignoreHTTPSErrors: true,
-    })
-
-  return await puppeteer.launch()
-}
 
 export const upload: Handler = async () => {
   if (!ACCOUNT_EMAIL || !ACCOUNT_PASSWORD) {
@@ -33,7 +18,13 @@ export const upload: Handler = async () => {
     )
   }
 
-  const browser = await launchBrowser()
+  const browser = await chromium.puppeteer.launch({
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath,
+    headless: NODE_ENV === "production",
+    ignoreHTTPSErrors: true,
+  })
 
   try {
     const page = await browser.newPage()
