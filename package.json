@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/cfranklin11/photo-bus#readme",
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.103",
+    "@types/aws-lambda": "^8.10.104",
     "@types/jest": "^28.1.6",
     "@types/puppeteer": "^5.4.6",
     "@types/source-map-support": "^0.5.6",
