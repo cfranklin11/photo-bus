@@ -1,17 +1,27 @@
 import "source-map-support/register.js"
+import chromium from "@sparticuz/chrome-aws-lambda"
 
 import type { Handler } from "aws-lambda"
 
-export const hello: Handler = async (): Promise<{
+const UPLOADER_URL = "https://family-album.com/web/uploader"
+
+export const test: Handler = async (): Promise<{
   statusCode: number
-  body: string
-}> => ({
-  statusCode: 200,
-  body: JSON.stringify(
-    {
-      message: "Go Serverless v1.0! Your function executed successfully!",
-    },
-    null,
-    2
-  ),
-})
+}> => {
+  const browser = await chromium.puppeteer.launch({
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath,
+    headless: true,
+    ignoreHTTPSErrors: true,
+  })
+
+  try {
+    const page = await browser.newPage()
+    await page.goto(UPLOADER_URL)
+  } finally {
+    await browser.close()
+  }
+
+  return { statusCode: 200 }
+}
